@@ -1,9 +1,17 @@
 <?php
-    include 'conf.php';
-    
-    $sql = 'select *　from damulist';
+    $dbhost = '101.201.65.237';
+    $dbuser = 'root';
+    $dbpass = '123456';
+    $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+    if(! $conn )
+    {
+        die('Could not connect: ' . mysql_error());
+    }
+    exit('11');
+    $sql = 'select * from damulist';
     $ret = mysql_query($sql);
     $data = [];
+    exit('11'); 	
     while($row = mysql_fetch_array($ret, MYSQL_ASSOC))
     {
         $data[] = $row;
