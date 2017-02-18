@@ -7,14 +7,12 @@
     {
         die('Could not connect: ' . mysql_error());
     }
-    exit('11');
+    mysql_select_db('damu');
     $sql = 'select * from damulist';
     $ret = mysql_query($sql);
-    $data = [];
-    exit('11'); 	
     while($row = mysql_fetch_array($ret, MYSQL_ASSOC))
     {
         $data[] = $row;
     }
-    echo json_decode($data);
+    echo json_encode($data);
 ?>
