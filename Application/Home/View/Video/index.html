@@ -42,7 +42,14 @@
     ,urlToGetDanmu:"{:U('query')}"
     ,urlToPostDanmu:"{:U('stone')}"
   });
-
+	 $.post("{:U('query')}",function(res){
+	  var arr = [];
+	  var data = res.data;
+	  var len = data.length;
+	  for(var i = 0 ;i<len;i++){
+			arr.push(data[i]['danmu']);
+	  }
+    });
   $("#danmup .danmu-div").danmu("addDanmu",[
     { "text":"这是滚动弹幕" ,color:"white",size:1,position:0,time:2}
     ,{ "text":"我是帽子绿" ,color:"green",size:1,position:0,time:3}
@@ -53,12 +60,12 @@
 
   ]);
   //{:U('query')}//url
-  $.ajax({
-    type:"POST",
-    url:{:U('query')},
-    success:function(data){
-      console.log(data);
-    }
-  });
+  <!-- $.ajax({ -->
+    <!-- type:"POST", -->
+    <!-- url:{:U('query')}, -->
+    <!-- success:function(data){ -->
+      <!-- console.log(data); -->
+    <!-- } -->
+  <!-- });  -->
 </script>
 </html>
