@@ -51,6 +51,14 @@
     ,{ "text":"这是底部弹幕" , color:"red" ,size:1,position:2,time:9}
     ,{ "text":"大家好，我是伊藤橙" ,color:"orange",size:1,position:1,time:3}
 
-  ])
+  ]);
+  //{:U('query')}//url
+  $.ajax({
+    type:"POST",
+    url:{:U('query')},
+    success:function(data){
+      console.log(data);
+    }
+  });
 </script>
 </html>
