@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
-  <link href="/thinkphp/Public/static/Home/css/scojs.css" rel="stylesheet">
-  <link href="/thinkphp/Public/static/Home/css/colpick.css" rel="stylesheet">
-  <link href="/thinkphp/Public/static/Home/css/bootstrap.css" rel="stylesheet">
-  <link rel="stylesheet" href="/thinkphp/Public/static/Home/css/main.css">
+  <link href="/video/Public/static/Home/css/scojs.css" rel="stylesheet">
+  <link href="/video/Public/static/Home/css/colpick.css" rel="stylesheet">
+  <link href="/video/Public/static/Home/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="/video/Public/static/Home/css/main.css">
 <!--   <link rel="stylesheet" href="../dist/css/danmuplayer.css"> -->
 </head>
 <body>
@@ -27,16 +27,16 @@
 
 
 </body>
-<script src="/thinkphp/Public/static/Home/js/jquery-2.1.4.min.js"></script>
-<script src="/thinkphp/Public/static/Home/js/jquery.shCircleLoader.js"></script>
-<script src="/thinkphp/Public/static/Home/js/sco.tooltip.js"></script>
-<script src="/thinkphp/Public/static/Home/js/colpick.js"></script>
-<script src="/thinkphp/Public/static/Home/js/jquery.danmu.js"></script>
-<script src="/thinkphp/Public/static/Home/js/main.js"></script>
+<script src="/video/Public/static/Home/js/jquery-2.1.4.min.js"></script>
+<script src="/video/Public/static/Home/js/jquery.shCircleLoader.js"></script>
+<script src="/video/Public/static/Home/js/sco.tooltip.js"></script>
+<script src="/video/Public/static/Home/js/colpick.js"></script>
+<script src="/video/Public/static/Home/js/jquery.danmu.js"></script>
+<script src="/video/Public/static/Home/js/main.js"></script>
 <!--<script src="../dist/js/danmuplayer.min.js"></script>-->
 <script>
   $("#danmup").DanmuPlayer({
-    src:"/thinkphp/Public/static/Home/img/1.mp4",
+    src:"/video/Public/static/Home/img/1.mp4",
     height: "480px", //区域的高度
     width: "800px" //区域的宽度
     ,urlToGetDanmu:"query.php"

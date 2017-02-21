@@ -30,4 +30,9 @@ define('APP_DEBUG',True);
 define('APP_PATH','./Application/');
 
 // 亲^_^ 后面不需要任何代码了 就是如此简单
->>>>>>> 52b16a1c44fbbdaf7c58d8ae49a48fd3f95cc92
+
+//定义配置文件目录
+define('APP_CONF', APP_PATH . '/Common/Conf/');
+
+// 引入ThinkPHP入口文件
+require './ThinkPHP/ThinkPHP.php';
