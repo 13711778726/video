@@ -26,11 +26,8 @@ class VideoController extends Controller {
         $return =array('status'=>0,'info'=>'','data'=>array());
         $Damu = M('damulist');
         $list = $Damu->select();
-        $arr = array();
-        foreach ($list as $key=>$val){
-            $arr[] = $val['danmu'].',';
-        }
-        $this->ajaxReturn($arr);
+        $return['data'] = $list;
+        $this->ajaxReturn($return);
         
     }
 }
