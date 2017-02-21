@@ -8,13 +8,9 @@ class VideoController extends Controller {
     public function stone() {
         $return =array('status'=>0,'info'=>'','data'=>array());
         $Damu = M('damulist');
-        $text = I('request.text','','string');
-        $white = I('request.white','','string');
-        $size = I('request.size',1,'int');
-        $position = I('request.position',1,'int');
-        $time = I('request.time',1,'int');
+        $danmu = $_POST['danmu'];      
         $data = array(
-            'text'=>$text,'white'=>$white,'size'=>$size,'position'=>$position,'time'=>$time
+            'danmu'=>$danmu,'addtime'=>time()
         );
         $res = $Damu ->add($data);
         if($res){
@@ -29,13 +25,12 @@ class VideoController extends Controller {
     public function query() {
         $return =array('status'=>0,'info'=>'','data'=>array());
         $Damu = M('damulist');
-        $list =$Damu->select();
-        if($list){
-            $return['status'] = 1;
-            $return['info'] = '列表数据'
-        }else{
-            $return['info'] = '列表为空';
+        $list = $Damu->select();
+        $arr = array();
+        foreach ($list as $key=>$val){
+            $arr[] = $val['danmu'].',';
         }
-        $this->ajaxReturn($return);
+        $this->ajaxReturn($arr);
+        
     }
 }
