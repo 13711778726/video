@@ -35,22 +35,43 @@
 <script src="__JS__/main.js"></script>
 <!--<script src="../dist/js/danmuplayer.min.js"></script>-->
 <script>
-  $("#danmup").DanmuPlayer({
+ 
+$(function(){
+
+   $("#danmup").DanmuPlayer({
     src:"__IMG__/1.mp4",
     height: "480px", //区域的高度
     width: "800px" //区域的宽度
-    ,urlToGetDanmu:"query.php"
-    ,urlToPostDanmu:"stone.php"
+    ,urlToGetDanmu:"{:U('query')}"
+    ,urlToPostDanmu:"{:U('stone')}"
   });
+  var arr = [];
 
-  $("#danmup .danmu-div").danmu("addDanmu",[
-    { "text":"这是滚动弹幕" ,color:"white",size:1,position:0,time:2}
-    ,{ "text":"我是帽子绿" ,color:"green",size:1,position:0,time:3}
-    ,{ "text":"哈哈哈啊哈" ,color:"black",size:1,position:0,time:10}
-    ,{ "text":"这是顶部弹幕" ,color:"yellow" ,size:1,position:1,time:3}
-    ,{ "text":"这是底部弹幕" , color:"red" ,size:1,position:2,time:9}
-    ,{ "text":"大家好，我是伊藤橙" ,color:"orange",size:1,position:1,time:3}
 
-  ])
+	 $.post("{:U('query')}",function(res){	 	 
+  	  var data = res.data;
+  	  var len = data.length;
+      var obj=JSON.parse(data[0]['danmu']);
+  	  for(var i = 0 ;i<len;i++){
+        var obj=JSON.parse(data[i]['danmu']);
+        arr.push(obj);
+  	  }
+      $("#danmup .danmu-div").danmu("addDanmu",arr);
+    });
+    
+    
+	
+});	
+	// var arr = [
+ //    { "text":"这是滚动弹幕" ,color:"white",size:1,position:0,time:2}
+ //    ,{ "text":"我是帽子绿" ,color:"green",size:1,position:0,time:3}
+ //    ,{ "text":"哈哈哈啊哈" ,color:"black",size:1,position:0,time:10}
+ //    ,{ "text":"这是顶部弹幕" ,color:"yellow" ,size:1,position:1,time:3}
+ //    ,{ "text":"这是底部弹幕" , color:"red" ,size:1,position:2,time:9}
+ //    ,{ "text":"大家好，我是伊藤橙" ,color:"orange",size:1,position:1,time:3}
+
+ //  ];
+
+
 </script>
 </html>
